@@ -3,7 +3,8 @@
 ## Table of contents
 * [General info] (#general-info)
 * [Technologies] (#technologies)
-* [Sources] (#sources)
+* [Setup] (#setup)
+* [Status] (#status)
 
 ## General info
 This project is created as our first collaborative work. We exercise organising our work as a team, communication and JavaScript.
@@ -22,3 +23,5 @@ For the game to work properly you will need one of the following browsers:
 * Safari 10
 * Opera 55
 
+## Status
+Work in progress.
