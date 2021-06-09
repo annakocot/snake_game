@@ -1,10 +1,10 @@
 # Snake Game
 
 ## Table of contents
-* [General info] (#general-info)
-* [Technologies] (#technologies)
-* [Setup] (#setup)
-* [Status] (#status)
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Setup](#setup)
+* [Status](#status)
 
 ## General info
 This project is created as our first collaborative work. We exercise organising our work as a team, communication and JavaScript.
