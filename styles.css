@@ -5,34 +5,120 @@
 }
 
 .container {
+  font-family: 'Press Start 2P', cursive;
   height: 100vh;
   width: 100vw;
-  color: #F4F0F1;
+  background-color: #F4F0F1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .menu-container {
-  height: 600px;
-  width: 400px;
-  margin: 0 auto;
+  height: 50vh;
+  width: 50vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 2px solid #d87cf9;
-  border-radius: 10px;
-  background: #F4F0F1;
+  border: 20px solid #080705;
+  background-color: #F4F0F1;
 }
 
 .new-game-button {
-  font-family: 'Roboto', sans-serif;
-  border: 2px solid #d87cf9;
-  border-radius: 10px;
-  padding: 10px 20px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 20px;
+  border: 10px solid #d87cf9;
+  padding: 20px 30px;
   background: #ebccff;
+  margin: 30px 0;
 }
 
 .higscore-container {
   display: flex;
   justify-content: center;
   color: #000;
+}
+
+.highscore-header {
+  text-align: center;
+  margin: 15px;
+  font-size: 20px;
+}
+
+.highscore-value {
+  text-align: center;
+  font-size: 20px;
+}
+
+.choices {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  text-align: center;
+  margin: 10px;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.game-board {
+  border: 10px solid #000;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.visible {
+  display: flex;
+  animation: przylot 2s linear;
+}
+
+.hidden {
+  display: none;
+  animation: odlot 2s linear;
+}
+
+@keyframes odlot {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(750deg);
+  }
+
+  75% {
+    transform: rotate(12000deg);
+    opacity: 0.5;
+  }
+
+  99% {
+    transform: rotate(12000deg);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes przylot {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    transform: rotate(-12000deg);
+    opacity: 0.2;
+  }
+  75% {
+    transform: rotate(-12000deg);
+    opacity: 0.5;
+  }
+  99% {
+    transform: rotate(-750deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
 }

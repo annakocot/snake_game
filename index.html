@@ -6,19 +6,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Snake Game</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
   <div class="container">
     <div class="menu-container">
+      <form action="" class="choices">
+        <div class="wrapper">
+          <label for="board-size" class="choose-size">Board size:</label>
+          <select name="board-size" id="board-size">
+            <option value="200">Small</option>
+            <option value="400">Medium</option>
+            <option value="600">Large</option>
+          </select>
+      </div>
+      <div class="wrapper">
+          <label for="start-speed" class="choose-speed">Speed:</label>
+          <select name="start-speed" id="start-speed">
+            <option value="slow">Slow</option>
+            <option value="medium">Medium</option>
+            <option value="fast">Fast</option>
+          </select>
+      </div>
+      </form>
       <button class="new-game-button">New Game</button>
       <div class="highscore-container">
         <h5 class="highscore-header">High Score</h5>
         <p class="highscore-value">0</p>
       </div>
     </div>
-</div>
+    <div class="game-board"></div>
+  </div>
 <script src="App.js"></script>
 </body>
 </html>
