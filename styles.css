@@ -79,7 +79,7 @@
   font-family: 'Press Start 2P', cursive;
 }
 
-.game-board {
+#game-board {
   border: 10px solid var(--border-color);
   display: none;
   justify-content: center;
@@ -87,7 +87,7 @@
 }
 
 .visible {
-  display: flex;
+  display: flex !important;
   animation: przylot 2s linear;
 }
 
