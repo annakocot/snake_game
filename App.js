@@ -19,11 +19,6 @@ const startGame = () => {
   ctx = canvas.getContext('2d');
   ctx.fillStyle = 'hotpink';
   const unit = 20;
-  const head = {
-    x: snake[0].x + dx,
-    y: snake[0].y + dy
-  };
-  head.fillStyle = 'darkblue';
 
   let snake = [{
       x: 100,
@@ -92,6 +87,10 @@ const startGame = () => {
   }
 
   function moveSnake() {
+    const head = {
+      x: snake[0].x + dx,
+      y: snake[0].y + dy
+    };
     snake.unshift(head);
     snake.pop();
   }
