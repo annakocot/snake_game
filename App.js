@@ -19,6 +19,11 @@ const startGame = () => {
   ctx = canvas.getContext('2d');
   ctx.fillStyle = 'hotpink';
   const unit = 20;
+  const head = {
+    x: snake[0].x + dx,
+    y: snake[0].y + dy
+  };
+  head.fillStyle = 'darkblue';
 
   let snake = [{
       x: 100,
@@ -43,6 +48,16 @@ const startGame = () => {
   let dy = 0;
 
   document.addEventListener("keydown", changeDirection);
+
+
+  function drawSnakePart(snakePart) {
+    ctx.fillRect(snakePart.x, snakePart.y, unit, unit);
+    ctx.strokeRect(snakePart.x, snakePart.y, unit, unit);
+  }
+
+  function drawSnake() {
+    snake.forEach(drawSnakePart);
+  }
 
   function changeDirection(event) {
     const W_KEY = 87;
@@ -77,14 +92,11 @@ const startGame = () => {
   }
 
   function moveSnake() {
-    const head = {
-      x: snake[0].x + dx,
-      y: snake[0].y + dy
-    };
     snake.unshift(head);
     snake.pop();
   }
 
+  drawSnake();
   moveSnake();
 
 };
