@@ -1,5 +1,5 @@
 const startBtn = document.querySelector('.new-game-button');
-const gameBoard = document.querySelector('.game-board');
+const canvas = document.querySelector('#game-board');
 const menu = document.querySelector('.menu-container');
 
 
@@ -7,46 +7,31 @@ const startGame = () => {
   const boardSizeValue = document.getElementById('board-size').options[document.getElementById('board-size').selectedIndex].value;
   const snakeStartSpeed = document.getElementById('board-size').options[document.getElementById('start-speed').selectedIndex].value;
 
+
   (function gameSettings() {
-    gameBoard.classList.add('visible');
+    canvas.classList.add('visible');
     menu.classList.add('hidden');
-    gameBoard.style.height = `${boardSizeValue}px`;
-    gameBoard.style.width = `${boardSizeValue}px`;
+    canvas.setAttribute('height', `${boardSizeValue}px`);
+    canvas.setAttribute('width', `${boardSizeValue}px`);
    })(boardSizeValue, snakeStartSpeed);
 
-   class Snake {
-     constructor(){
-      this.snakePosition = [
-      { x: 100, y: 100},
-      { x: 90, y: 100},
-      { x: 80, y: 100},
-      { x: 70, y: 100}];
 
-    //  handleSnakeMove(){
+  ctx = canvas.getContext('2d');
+  ctx.fillStyle = 'hotpink';
+  const unit = 20;
 
-     };
+  let snake = [ {x: 100, y: 100},  {x: 80, y: 100},  {x: 60, y: 100},  {x: 40, y: 100} ];
 
-     handleSnakeDraw(){
-      const canvas = document.getElementsByClassName('game-board');
-      const ctx = canvas[0].getContext('2d');
-      ctx.strokeRect(50 , 50, unit, unit);
-     };
+  function drawSnakePart(snakePart){
+    ctx.fillRect(snakePart.x, snakePart.y, unit, unit);
+    ctx.strokeRect(snakePart.x, snakePart.y, unit, unit);
+  }
 
+  function drawSnake(){
+      snake.forEach(drawSnakePart);
+}
 
-  // 1. metoda - rysowanie
-  // 2. metoda - zmiana pozycji
-
-
-   }
-
-  const unit = 10;
-  const deltaX = unit;
-  //const deltaY;
-
-
-
-
-
+drawSnake();
 };
 
 startBtn.addEventListener('click', startGame);
