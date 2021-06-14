@@ -44,6 +44,16 @@ const startGame = () => {
 
   document.addEventListener("keydown", changeDirection);
 
+  game();
+
+function game() {
+  changingDirection = false;
+  setTimeout(function start(){
+    moveSnake();
+    drawSnake();
+    game();
+  }, 500)
+};
 
   function drawSnakePart(snakePart) {
     ctx.fillRect(snakePart.x, snakePart.y, unit, unit);
@@ -94,9 +104,6 @@ const startGame = () => {
     snake.unshift(head);
     snake.pop();
   }
-
-  drawSnake();
-  moveSnake();
 
 };
 
