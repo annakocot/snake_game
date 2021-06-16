@@ -20,15 +20,33 @@ const startGame = () => {
   })(boardSizeValue, snakeStartSpeed);
 
   ctx = canvas.getContext('2d');
-  const unit = 20;
+  const unit = 10;
 
   let snakeHead = [{ x: 100, y: 100 }];
   let snakeBody = [
     { x: 100, y: 100 },
+    { x: 90, y: 100 },
     { x: 80, y: 100 },
-    { x: 60, y: 100 },
-    { x: 40, y: 100 },
+    { x: 70, y: 100 },
   ];
+
+  let food = { x: 0, y: 0 };
+
+  function randomFood(boardSize) {
+    return Math.round((Math.random() * boardSizeValue / unit)) * 10;
+  }
+
+  function generateFood() {
+    food.x = randomFood(boardSizeValue);
+    food.y = randomFood(boardSizeValue);
+  }
+
+  function drawFood() {
+    generateFood();
+    ctx.fillStyle = 'red';
+    ctx.fillRect(food.x, food.y, unit, unit);
+    ctx.strokeRect(food.x, food.y, unit, unit);
+  }
 
   function drawSnakeBody(snakePart) {
     ctx.fillStyle = '#11d147';
@@ -48,6 +66,7 @@ const startGame = () => {
   }
 
   drawSnake();
+  drawFood();
 };
 
 startBtn.addEventListener('click', startGame);
